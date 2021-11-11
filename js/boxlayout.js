@@ -1,13 +1,3 @@
-/**
- * boxlayout.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
 var Boxlayout = (function () {
   var $el = $("#bl-main"),
     $sections = $el.children("section"),
@@ -57,6 +47,8 @@ var Boxlayout = (function () {
   };
 
   function initEvents() {
+    $("#bl-work-items").css("display", "none");
+
     $("#makeItYes").on("click", () => {
       start();
       stop();
@@ -75,7 +67,9 @@ var Boxlayout = (function () {
         })
         .on(transEndEventName, function (event) {
           if (!$(event.target).is("section")) return false;
+          console.log("Transitions ended.");
           $("#bl-work-items").css("display", "block");
+          $(".loading").css("display", "none");
         })
         .find("span.bl-icon-close")
         .on("click", function () {
@@ -98,74 +92,6 @@ var Boxlayout = (function () {
           return false;
         });
     });
-
-    // clicking on a work item: the current section scales down and the respective work panel slides up
-    // $workItems.on("click", function (event) {
-    //   // scale down main section
-    //   $sectionWork.addClass("bl-scale-down");
-
-    //   // show panel for this work item
-    //   $workPanelsContainer.addClass("bl-panel-items-show");
-
-    //   var $panel = $workPanelsContainer.find(
-    //     "[data-panel='" + $(this).data("panel") + "']"
-    //   );
-    //   currentWorkPanel = $panel.index();
-    //   $panel.addClass("bl-show-work");
-
-    //   return false;
-    // });
-
-    // navigating the work items: current work panel scales down and the next work panel slides up
-    // $nextWorkItem.on("click", function (event) {
-    //   if (isAnimating) {
-    //     return false;
-    //   }
-    //   isAnimating = true;
-
-    //   var $currentPanel = $workPanels.eq(currentWorkPanel);
-    //   currentWorkPanel =
-    //     currentWorkPanel < totalWorkPanels - 1 ? currentWorkPanel + 1 : 0;
-    //   var $nextPanel = $workPanels.eq(currentWorkPanel);
-
-    //   $currentPanel
-    //     .removeClass("bl-show-work")
-    //     .addClass("bl-hide-current-work")
-    //     .on(transEndEventName, function (event) {
-    //       if (!$(event.target).is("div")) return false;
-    //       $(this).off(transEndEventName).removeClass("bl-hide-current-work");
-    //       isAnimating = false;
-    //     });
-
-    //   if (!supportTransitions) {
-    //     $currentPanel.removeClass("bl-hide-current-work");
-    //     isAnimating = false;
-    //   }
-
-    //   $nextPanel.addClass("bl-show-work");
-
-    //   return false;
-    // });
-
-    // clicking the work panels close button: the current work panel slides down and the section scales up again
-    // $closeWorkItem.on("click", function (event) {
-    //   // scale up main section
-    //   $sectionWork.removeClass("bl-scale-down");
-    //   $workPanelsContainer.removeClass("bl-panel-items-show");
-    //   $workPanels.eq(currentWorkPanel).removeClass("bl-show-work");
-
-    //   return false;
-    // });
-
-    // $pageTitle.on("click", function (event) {
-    //   console.log("clicked");
-    //   // scale up main section
-    //   $sectionWork.removeClass("bl-scale-down");
-    //   $workPanelsContainer.removeClass("bl-panel-items-show");
-    //   $workPanels.eq(currentWorkPanel).removeClass("bl-show-work");
-
-    //   return false;
-    // });
   }
 
   return { init: init };

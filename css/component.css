@@ -331,37 +331,37 @@ div.bl-panel-items > div > div {
 .minion1 {
   position: absolute;
   transform: rotate(-33deg);
-  width: 80px;
+  width: 90px;
   top: 0;
   right: -24px;
   z-index: 999;
-  animation: 1s ease-out 0s 1 slideInFromRight;
+  animation: 1.5s ease-out 0s 1 slideInFromRight;
 }
 .minion2 {
   position: absolute;
-  width: 80px;
+  width: 90px;
   top: 0;
   left: -24px;
   transform: rotate(33deg);
   z-index: 999;
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
 }
 .minion3 {
   position: absolute;
-  width: 80px;
+  width: 90px;
   bottom: -10px;
   right: -10px;
   transform: rotate(-33deg);
-  animation: 1s ease-out 0s 1 slideInFromRight;
+  animation: 1.5s ease-out 0s 1 slideInFromRight;
   z-index: 999;
 }
 .minion4 {
   position: absolute;
-  width: 80px;
+  width: 90px;
   bottom: -10px;
   left: -24px;
   transform: rotate(33deg);
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
   z-index: 999;
 }
 
@@ -390,7 +390,7 @@ div.bl-panel-items > div > div {
   border: 8px solid rgba(0, 0, 0, 0.1);
 }
 
-.bl-content > ul li a img {
+.bl-content > ul li img {
   display: block;
   max-width: 100%;
 }
@@ -542,17 +542,17 @@ div.bl-panel-items > div.bl-hide-current-work {
 
 .bl-main.bl-expand-item > section:not(.bl-expand),
 .bl-main.bl-expand-item > section.bl-scale-down {
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  transform: scale(0.5);
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  transform: scale(0.3);
   opacity: 0;
 }
 
 .bl-box {
-  -webkit-transition: opacity 0.2s linear 0.5s;
-  -moz-transition: opacity 0.2s linear 0.5s;
-  transition: opacity 0.2s linear 0.5s;
+  -webkit-transition: opacity 0.2s linear 0.3s;
+  -moz-transition: opacity 0.2s linear 0.3s;
+  transition: opacity 0.2s linear 0.3s;
 }
 
 section.bl-expand .bl-box {
@@ -586,9 +586,9 @@ section.bl-expand .bl-content,
 section.bl-expand .bl-icon-close {
   pointer-events: auto;
   opacity: 1;
-  -webkit-transition: opacity 0.3s linear 0.5s;
-  -moz-transition: opacity 0.3s linear 0.5s;
-  transition: opacity 0.3s linear 0.5s;
+  -webkit-transition: opacity 0.3s linear 0.3s;
+  -moz-transition: opacity 0.3s linear 0.3s;
+  transition: opacity 0.3s linear 0.3s;
 }
 
 @media screen and (min-width: 46.5em) {
@@ -660,17 +660,17 @@ section.bl-expand .bl-icon-close {
     width: 100%;
   }
   .minion1 {
-    width: 60px;
+    width: 80px;
     top: 8px;
   }
   .minion2 {
-    width: 60px;
+    width: 80px;
     top: 5px;
   }
   .minion3 {
-    width: 60px;
+    width: 80px;
   }
   .minion4 {
-    width: 60px;
+    width: 80px;
   }
 }

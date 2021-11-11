@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Mochiy+Pop+P+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Chewy&family=DM+Sans:wght@500;700&family=Poppins:wght@300;400;500&family=Rampart+One&family=Rancho&display=swap");
-
 @font-face {
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot");
@@ -18,6 +15,7 @@ html {
   padding: 0;
   margin: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -320,7 +318,7 @@ div.bl-panel-items > div > div {
 }
 .minion3 {
   position: absolute;
-  width: 100px;
+  width: 90px;
   bottom: -10px;
   right: -10px;
   transform: rotate(-23deg);

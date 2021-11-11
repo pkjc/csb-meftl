@@ -16,6 +16,7 @@ html {
   margin: 0;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 h1,
 h2,
@@ -58,17 +59,11 @@ a:hover {
   color: #fff;
   border-bottom: none;
 }
-form {
-  /* border: 1px solid #ddd;
-  border-radius: 10px;
-  padding-left: 20px;
-  max-width: 95%;
-  display: block;
-  margin: 0 auto; */
-}
+
 .form-element {
   font-size: 1.5em;
 }
+
 input[type="radio"] {
   width: 20px;
   height: 20px;
@@ -79,11 +74,22 @@ input[type="radio"] {
   vertical-align: middle;
 }
 
+input[type="text"] {
+  max-width: 300px;
+  padding: 12px 10px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 input[type="number"],
 select {
   max-width: 100px;
   padding: 12px 10px;
-  margin: 8px 0;
+  margin: 6px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -95,6 +101,7 @@ select {
   font-family: "Poppins";
   font-weight: 500;
   font-size: 1.25em;
+  margin-top: 1em;
 }
 input[type="submit"] {
   font-family: "Poppins";
@@ -240,7 +247,7 @@ input[type="submit"]:hover {
 }
 .bl-main > section .bl-icon-close {
   position: absolute;
-  top: 20px;
+  top: 18px;
   right: 20px;
   cursor: pointer;
   z-index: 100;
@@ -270,6 +277,7 @@ div.bl-panel-items > div > div {
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  padding-bottom: 40px;
 }
 
 /* Custom content */
@@ -277,8 +285,8 @@ div.bl-panel-items > div > div {
 .bl-content p {
   margin: 0 auto;
   padding-bottom: 15px;
-  font-size: 1.7em;
-  line-height: 1.8;
+  font-size: 1.55em;
+  line-height: 1.85;
 }
 
 .bl-content h2 {
@@ -295,19 +303,39 @@ div.bl-panel-items > div > div {
 .bl-content h3 {
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   padding-top: 10px;
   font-size: 1.4em;
   border-bottom: 2px dashed #ddd;
   padding-bottom: 8px;
   display: inline-block;
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%) rotate(-33deg);
+  }
+  100% {
+    transform: translateX(0) rotate(33deg);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%) rotate(33deg);
+  }
+  100% {
+    transform: translateX(0) rotate(-33deg);
+  }
+}
+
 .minion1 {
   position: absolute;
+  transform: rotate(-33deg);
   width: 80px;
   top: 0;
   right: -24px;
-  transform: rotate(-33deg);
+  z-index: 999;
+  animation: 1s ease-out 0s 1 slideInFromRight;
 }
 .minion2 {
   position: absolute;
@@ -315,23 +343,28 @@ div.bl-panel-items > div > div {
   top: 0;
   left: -24px;
   transform: rotate(33deg);
+  z-index: 999;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 .minion3 {
   position: absolute;
-  width: 90px;
+  width: 80px;
   bottom: -10px;
   right: -10px;
-  transform: rotate(-23deg);
+  transform: rotate(-33deg);
+  animation: 1s ease-out 0s 1 slideInFromRight;
   z-index: 999;
 }
 .minion4 {
   position: absolute;
-  width: 90px;
+  width: 80px;
   bottom: -10px;
   left: -24px;
-  transform: rotate(3deg);
+  transform: rotate(33deg);
+  animation: 1s ease-out 0s 1 slideInFromLeft;
   z-index: 999;
 }
+
 .bl-content article a {
   /* color: rgba(0, 0, 0, 0.2); */
 }
@@ -592,16 +625,21 @@ section.bl-expand .bl-icon-close {
     top: 0;
     left: 0;
   }
+  .bl-main > section .bl-icon-close {
+    top: 20px;
+    right: 35px;
+  }
 }
 @media screen and (max-width: 46.5em) {
   .bl-content,
   div.bl-panel-items > div > div {
     left: auto;
     right: auto;
+    padding-left: 30px;
   }
   .page-title {
-    font-size: 1.25em;
-    padding-top: 20px;
+    font-size: 1.1em;
+    padding-top: 21px;
   }
   .bl-content {
     width: 100%;
@@ -620,5 +658,19 @@ section.bl-expand .bl-icon-close {
 
   .bl-content > ul li {
     width: 100%;
+  }
+  .minion1 {
+    width: 60px;
+    top: 8px;
+  }
+  .minion2 {
+    width: 60px;
+    top: 5px;
+  }
+  .minion3 {
+    width: 60px;
+  }
+  .minion4 {
+    width: 60px;
   }
 }
